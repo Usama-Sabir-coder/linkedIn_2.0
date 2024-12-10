@@ -1,5 +1,11 @@
 import React from "react";
 import NavItems from "./NavItems";
+import {
+  SignedIn,
+  SignInButton,
+  UserButton,
+  SignedOut,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   return (
@@ -14,7 +20,7 @@ const Navbar = () => {
             className="rounded-sm"
           />
         </div>
-        <div>
+        <div className="md:block hidden">
           <input
             type="text"
             placeholder="Search"
@@ -22,8 +28,18 @@ const Navbar = () => {
             aria-label="Search"
           />
         </div>
-        <div>
+        <div className="md:block hidden">
           <NavItems />
+        </div>
+        <div>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <button className="border border-slate-700 px-4 py-1 bg-slate-600 rounded-3xl cursor-pointer text-white hover:text-black">
+              <SignInButton />
+            </button>
+          </SignedOut>
         </div>
       </div>
     </div>
