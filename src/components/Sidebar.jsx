@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ProfilePicture from "../ProfileDp/Profilepicture";
 
 const Sidebar = ({ user }) => {
   const [posts, setPosts] = useState([]);
+  const [avatar, setAvatar] = useState(user?.imageUrl || "/Usama_Sabir.jpg");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -18,28 +18,56 @@ const Sidebar = ({ user }) => {
     fetchPosts();
   }, []);
 
+  const handleAvatarChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setAvatar(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <div className="hidden md:block w-[20%] h-fit border border-gray-300 bg-white rounded-lg">
       <div className="flex relative flex-col items-center">
-        <div className="w-full h-16 overflow-hidden mb-6">
-          {user && (
-            <img
-              src="/banner.jpg"
-              alt="Banner"
-              className="w-full h-full rounded-t"
-            />
-          )}
+        <div className="w-full h-16 overflow-hidden">
+          <img
+            src="/download.jpeg"
+            alt="Banner"
+            width={200}
+            height={200}
+            className="w-full h-full rounded-t"
+          />
         </div>
         <div className="my-1 absolute top-10 left-[40%]">
-          <ProfilePicture src={user ? user.imageUrl : "/banner.jpg"} />
+          <label htmlFor="avatar-upload" className="cursor-pointer">
+            <img
+              className="rounded-full w-16 h-16 object-cover"
+              src={avatar}
+              alt="Avatar"
+            />
+          </label>
+          <input
+            id="avatar-upload"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleAvatarChange}
+          />
         </div>
-        <div className="border-b border-b-gray-300">
+        <br />
+        <div className="border-b border-b-gray-300 ">
           <div className="p-2 mt-5 text-center">
             <h1 className="font-bold hover:underline cursor-pointer">
               {user ? `${user.firstName} ${user.lastName}` : "Usama Sabir"}
             </h1>
             <p className="text-xs">
-              @{user ? user.username : "usamasabir@gmail.com"}
+              @
+              {user
+                ? user.username
+                : "MERN Stack Developer At Knowledge Streams | Flutter Developer | Software Engine"}
             </p>
           </div>
         </div>

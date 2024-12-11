@@ -1,5 +1,13 @@
-const Feeds = () => {
-  return <h1>Feeds</h1>;
+import PostInput from "../post/PostInput";
+import Posts from "../post/Posts";
+
+const Feed = () => {
+  return (
+    <div className="flex-1">
+      <PostInput />
+      <Posts />
+    </div>
+  );
 };
 
-export default Feeds;
+export default Feed;

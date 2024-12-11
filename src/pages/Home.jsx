@@ -1,7 +1,8 @@
 import React from "react";
-import Feed from "../components/Feed";
+
 import Sidebar from "../components/Sidebar";
 import News from "../components/News";
+import Feed from "../components/Feed";
 
 const Home = () => {
   return (
