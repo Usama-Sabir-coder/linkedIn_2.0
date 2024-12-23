@@ -1,5 +1,4 @@
 import React from "react";
-
 import Sidebar from "../components/Sidebar";
 import News from "../components/News";
 import Feed from "../components/Feed";

@@ -28,7 +28,7 @@ const PostInput = () => {
   // };
   return (
     <>
-      <div className="bg-white p-4 m-2 md:m-0 border border-gray-300 rounded-lg">
+      <div className="bg-white p-4 mt-2 md:m-0 border border-gray-300 rounded-lg">
         <div className="flex items-center  gap-3">
           <img
             src="/Usama_Sabir.jpg"
@@ -41,19 +41,19 @@ const PostInput = () => {
             className=" rounded-full px-4 text-left  hover:bg-gray-100 h-12 w-full cursor-pointer"
             onClick={handleOpen}
           />
-          <div className="w-full flex justify-between items-center  px-3 py-2">
-            <span className=" hover:text-blue-600 cursor-pointer">
-              <i class="fa-regular fa-image"></i>
-            </span>
-            &nbsp; &nbsp; &nbsp;
-            <span className=" hover:text-blue-600 cursor-pointer">
-              <i class="fa-brands fa-youtube"></i>
-            </span>
-            &nbsp; &nbsp; &nbsp;
-            <span className=" hover:text-blue-600 cursor-pointer">
-              <i class="fa-solid fa-newspaper"></i>
-            </span>
-          </div>
+        </div>
+        <div className="w-full flex justify-between items-center  px-3 py-2 pt-4">
+          <span className="text-[#378FE9] hover:text-blue-600 cursor-pointer text-[18px]">
+            <i class="fa-regular fa-image"></i>
+          </span>
+          &nbsp;
+          <span className="text-[#5F9B41] hover:text-blue-600 cursor-pointer text-[18px]">
+            <i class="fa-brands fa-youtube"></i>
+          </span>
+          &nbsp;
+          <span className="text-[#E06847] hover:text-blue-600 cursor-pointer text-[18px]">
+            <i class="fa-solid fa-newspaper"></i>
+          </span>
         </div>
       </div>
 
